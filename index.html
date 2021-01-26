@@ -18,11 +18,11 @@
     ar ar-modes="scene-viewer webxr" 
     ar-scale="auto" 
     camera-controls 
-    alt="A 3D model of an astronaut" 
+    shadow-intensity="1"
+    alt="A 3D model of beer" 
     skybox-image="./assets/Arte 3D/HDRI/Env360.hdr">
-
       <div id="error" class="hide">AR is not supported on this device</div>
-      <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      <button slot="ar-button" class="ar-button">
         👋 Activate AR
     </button>
     </model-viewer>
@@ -37,8 +37,6 @@
         }
       });
     </script>
-    
   </div>
- 
 </body>
 </html>
