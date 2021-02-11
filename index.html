@@ -22,15 +22,17 @@
     camera-controls 
     shadow-intensity="1"
     alt="A 3D model of beer" 
-    skybox-image="./assets/Arte 3D/HDRI/Env360.hdr">
+    skybox-image="./assets/Arte 3D/HDRI/Env360.hdr"
+    >
       <div id="error" class="hide">AR is not supported on this device</div>
       <div id="lazy-load-poster" slot="poster"></div>
-      <div id="button-load" slot="poster">Load 3D Model</div>
+      <div id="button-load" slot="poster">Cargar el modelo</div>
       <button slot="ar-button" class="ar-button">
         👋 Activate AR
       </button>
-      <div>
-        <button class="btn">siguiente modelo</button>
+      <div class="btnsDown">
+        <button class="btn back" id="back">anterior modelo</button>
+        <button class="btn next" id="next">siguiente modelo</button>
       </div>
     </model-viewer>
   </div>

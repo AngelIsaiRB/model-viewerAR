@@ -8,6 +8,7 @@ body {
 .game-container {
 	width: 100%;
 	height: 100vh;
+	display: block;
 }
 .ar-button{
 	margin-top: 20px;
@@ -40,6 +41,46 @@ canvas {
 	visibility: hidden;
 	transition: visibility 2s, opacity 1s 1s;
   }
-.btn{
-	position: absolute;
-}
+
+/* div down  */
+  .btnsDown{
+	text-align: center;
+	position:flex; 	
+	z-index:999999; 
+  }
+
+/* buttons */
+  .btn {
+	
+	border-radius: 2px;
+	background-color: transparent;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+  }
+  .next {
+	margin: 50px;
+	background-color: #0000007c;
+	border: 2px solid #000000; 	
+	transition-duration: 0.4s;
+  }
+  
+  .next:hover {
+	background-color: #4CAF50;
+	color: white;
+  }
+  .back {
+	margin: 50px;
+	background-color: #0000007c;
+	border: 2px solid #000000; 
+	transition-duration: 0.4s;
+  }
+  
+  .back:hover {
+	background-color: #b83f3f;
+	color: white;
+  }
