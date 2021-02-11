@@ -7,13 +7,15 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>model</title>
 	<link rel="stylesheet" href="./style/index.css">
+	<link rel="stylesheet" href="./style/models.css">
 	<!-- Import the component -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
 <body>
-  <div  id="model">
+    <div  id="model">
     <model-viewer  class="game-container" id="model-viewer" 
+    reveal="interaction" 
     src="./assets/Arte 3D/botella/scene.gltf" 
     ar ar-modes="scene-viewer webxr" 
     ar-scale="auto" 
@@ -22,21 +24,15 @@
     alt="A 3D model of beer" 
     skybox-image="./assets/Arte 3D/HDRI/Env360.hdr">
       <div id="error" class="hide">AR is not supported on this device</div>
+      <div id="lazy-load-poster" slot="poster"></div>
+      <div id="button-load" slot="poster">Load 3D Model</div>
       <button slot="ar-button" class="ar-button">
         👋 Activate AR
-    </button>
+      </button>
+      <div>
+        <button class="btn">siguiente modelo</button>
+      </div>
     </model-viewer>
-    <script>
-      document.querySelector("#model-viewer").addEventListener('ar-status', (event) => {
-        if(event.detail.status === 'failed'){
-          const error = document.querySelector("#error");
-          error.classList.remove('hide');
-          error.addEventListener('transitionend',(event) => {
-            error.classList.add('hide');
-          });
-        }
-      });
-    </script>
   </div>
 </body>
 </html>
