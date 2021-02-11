@@ -16,9 +16,9 @@ body {
 	background-color: white;
 	border-radius: 4px; 
 	border: none; 
-	position: absolute; 
-	top: 16px; 
-	right: 16px; 
+	position:absolute;
+    bottom:5px;
+    right:10px;
 }
 
 /* Fix mozilla error */
@@ -51,7 +51,6 @@ canvas {
 
 /* buttons */
   .btn {
-	
 	border-radius: 2px;
 	background-color: transparent;
 	border: none;
@@ -84,3 +83,29 @@ canvas {
 	background-color: #b83f3f;
 	color: white;
   }
+
+@media all and (max-width:30em){
+	.btn {
+		border-radius: 2px;
+		background-color: transparent;
+		border: none;
+		color: white;
+		padding: 5px 2px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+	}
+	.next {
+		margin: 5px;
+		background-color: #0000007c;
+		border: 2px solid #000000; 	
+		transition-duration: 0.4s;
+	  }
+	  .back{
+		margin: 10px;
+		background-color: #0000007c;
+		border: 2px solid #000000; 	
+		transition-duration: 0.4s; 
+	  }
+}
