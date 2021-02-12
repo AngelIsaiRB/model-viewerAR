@@ -5,8 +5,16 @@
 // window.addEventListener('resize', () => {
 // 	app.onResize();
 // });
-const models = ['botella/scene.gltf', 'cube/cube.gltf', 'torus/torus.gltf'];
-const posters = ["url('./assets/Arte 3D/botella/img/botella.png')", "url('./assets/Arte 3D/cube/cube.png')","url('./assets/Arte 3D/torus/torus.png')"]
+const models = ['botella/scene.gltf',
+ 'cube/cube.gltf',
+ 'torus/torus.gltf',
+ 'figure1/figure1.gltf',
+];
+const posters = ["url('./assets/Arte 3D/botella/img/botella.png')",
+ "url('./assets/Arte 3D/cube/cube.png')",
+ "url('./assets/Arte 3D/torus/torus.png')",
+ "url('./assets/Arte 3D/figure1/figure1.png')",
+]
 let count=0;
 const toggleModel = document.querySelector('#model-viewer');
 
@@ -23,13 +31,13 @@ document.querySelector("#model-viewer").addEventListener('ar-status', (event) =>
 
 document.querySelector("#next").onclick = () =>{
     count++;
-    if(count >= 3 ) count = 0;
+    if(count >= 4 ) count = 0;
     document.querySelector("#lazy-load-poster").style.backgroundImage = posters[count]
     toggleModel.setAttribute('src', `./assets/Arte 3D/${models[count]}`)
 }
 document.querySelector("#back").onclick = () =>{
     count -= 1 ;
-    if(count <= -1 ) count = 2;
+    if(count <= -1 ) count = 3;
     document.querySelector("#lazy-load-poster").style.backgroundImage = posters[count]
     toggleModel.setAttribute('src', `./assets/Arte 3D/${models[count]}`)
 }
