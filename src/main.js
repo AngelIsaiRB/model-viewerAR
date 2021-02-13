@@ -1,10 +1,3 @@
-// import { App } from './App';
-
-// const app = new App(document.querySelector('#game-container'));
-
-// window.addEventListener('resize', () => {
-// 	app.onResize();
-// });
 const models = ['./assets/Arte 3D/botella/scene.gltf',
  './assets/Arte 3D/cube/cube.gltf',
  './assets/Arte 3D/torus/torus.gltf',
