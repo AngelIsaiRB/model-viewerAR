@@ -26,8 +26,10 @@ document.querySelector("#next").onclick = () =>{
     count++;
     if(count >= 5 ) count = 0;
     document.querySelector("#lazy-load-poster").style.backgroundImage = posters[count]
-    toggleModel.setAttribute('src', `${models[count]}`)        
-    
+    toggleModel.setAttribute('src', `${models[count]}`)    
+}
+document.querySelector("#link").onclick = () =>{
+    window.open("https://www.google.com");
 }
 document.querySelector("#back").onclick = () =>{
     count -= 1 ;

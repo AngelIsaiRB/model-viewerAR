@@ -11,13 +11,18 @@
 	<!-- Import the component -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-
+<!-- 
+ar-mode 
+web = webxr
+androidAR = scene-viewer  (ARcore)
+ios = quick-look     
+ -->
 
 <body>
     <div  id="model">
     <model-viewer 
     ar  
-    ar-modes="webxr"
+    ar-modes="webxr quick-look"
     class="game-container" id="model-viewer" 
     ios-src="./assets/Arte 3D/botella/NEW_Bottle8.usdz"
     reveal="interaction" 
@@ -37,6 +42,7 @@
       <div class="btnsDown">
         <button class="btn back" id="back">anterior modelo</button>
         <button class="btn next" id="next">siguiente modelo</button>
+        <button class="btn next" id="link">open google</button>
       </div>
     </model-viewer>
   </div>
