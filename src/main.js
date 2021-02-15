@@ -11,6 +11,7 @@ const posters = ["url('./assets/Arte 3D/botella/img/botella.png')",
  "url('https://firebasestorage.googleapis.com/v0/b/web-ar-d9581.appspot.com/o/images%2F5Q7f-k_7lFM%2FUX371.png?alt=media&token=0fd7e163-0215-4ad9-9189-2f7ed2e6531b')",
 ]
 let count=0;
+let playpause =false;
 const toggleModel = document.querySelector('#model-viewer');
 
 document.querySelector("#model-viewer").addEventListener('ar-status', (event) => {
@@ -22,14 +23,41 @@ document.querySelector("#model-viewer").addEventListener('ar-status', (event) =>
         });
     }
 });
+document.querySelector("#link").onclick = () =>{
+    window.open("https://www.google.com");
+}
+
+
+// event to catch double tap
+var tapedTwice = false;
+window.addEventListener("touchstart",() =>{
+
+        if(!tapedTwice) {
+            tapedTwice = true;
+            setTimeout( function() { tapedTwice = false; }, 300 );
+            return false;
+        }
+        onPlaypause();
+})
+
+document.querySelector("#play").onclick = () =>{
+    onPlaypause();
+}
+const onPlaypause = () =>{
+    if(playpause){        
+        document.querySelector("#model-viewer").pause();
+        playpause=false;
+    }
+    else{
+    document.querySelector("#model-viewer").play();
+    playpause=true;
+    }
+}
 document.querySelector("#next").onclick = () =>{
     count++;
     if(count >= 5 ) count = 0;
     document.querySelector("#lazy-load-poster").style.backgroundImage = posters[count]
     toggleModel.setAttribute('src', `${models[count]}`)    
-}
-document.querySelector("#link").onclick = () =>{
-    window.open("https://www.google.com");
 }
 document.querySelector("#back").onclick = () =>{
     count -= 1 ;
