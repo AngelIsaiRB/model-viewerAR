@@ -15,17 +15,22 @@
 
 <body>
     <div  id="model">
-    <model-viewer  class="game-container" id="model-viewer" 
+    <model-viewer 
+    ar  
+    ar-modes="webxr scene-viewer quick-look"
+    class="game-container" id="model-viewer" 
+    ios-src="./assets/Arte 3D/botella/NEW_Bottle8.usdz"
     reveal="interaction" 
     model-visibility="false"
     src="./assets/Arte 3D/botella/scene.gltf" 
-    ios-src="./assets/Arte 3D/botella/NEW_Bottle8.usdz"
-    ar ar-modes="scene-viewer webxr" 
     ar-scale="auto" 
     camera-controls 
     shadow-intensity="1"
     alt="A 3D model of beer" 
     >
+    <button slot="ar-button" class="ar-button">
+      👋 Activar AR
+    </button>
       <div id="error" class="hide">AR is not supported on this device</div>
       <div id="lazy-load-poster" slot="poster"></div>
       <div id="button-load" slot="poster">Cargar el modelo</div>
@@ -33,9 +38,6 @@
         <button class="btn back" id="back">anterior modelo</button>
         <button class="btn next" id="next">siguiente modelo</button>
       </div>
-      <button slot="ar-button" class="ar-button">
-        👋 Activate AR
-      </button>
     </model-viewer>
   </div>
 </body>
